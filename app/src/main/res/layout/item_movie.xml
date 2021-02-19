@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="5dp"
+    android:background="#FFFFFF">
 
     <ImageView
         android:id="@+id/ivPoster"
@@ -13,7 +17,9 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:contentDescription="poster"
+        android:outlineAmbientShadowColor="#BD2D2D"
         tools:srcCompat="@tools:sample/avatars" />
+
 
     <TextView
         android:id="@+id/tvTitle"
@@ -24,6 +30,7 @@
         android:layout_marginTop="0dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:textSize="24sp"
+        android:transitionName="title"
         tools:text="Wonder Woman 1984" />
 
     <TextView
