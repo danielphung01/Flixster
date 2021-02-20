@@ -25,7 +25,7 @@ import okhttp3.Headers;
 
 public class DetailActivity extends YouTubeBaseActivity {
 
-    private static final String YOUTUBE_API_KEY = "AIzaSyDeOu51oMKxmP9gbNb2_GnhhwkYzffulG0";
+    private static String YOUTUBE_API_KEY = "";
     public static final String VIDEOS_URL = "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
 
     TextView tvTitle;
@@ -47,6 +47,8 @@ public class DetailActivity extends YouTubeBaseActivity {
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
         ratingBar.setRating((float)movie.getRating());
+
+        YOUTUBE_API_KEY = getString(R.string.parse_application_id);
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(String.format(Locale.US, VIDEOS_URL, movie.getMovieID()), new JsonHttpResponseHandler() {
